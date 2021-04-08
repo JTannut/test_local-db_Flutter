@@ -45,10 +45,6 @@ class TransactionDB {
     return keyID;
   }
 
-  //ดึงข้อมูล
-
-  // ใหม่ => เก่า false มาก => น้อย
-  // เก่า => ใหม่ true น้อย => มาก
   Future<List<Transactions>> loadAllData() async {
     var db = await this.openDatabase();
     var store = intMapStoreFactory.store("expense");
@@ -61,7 +57,6 @@ class TransactionDB {
           title: record["title"],
           lastname: record["lastname"],
           address: record["address"],
-          //  phone: record["phone"],
           amount: record["amount"],
           email: record["email"],
           password: record["password"],
